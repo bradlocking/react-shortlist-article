@@ -3,11 +3,18 @@
 */
 import React from 'react';
 
+
+// Import any required components
+import Article from './Article.jsx';
+
+
 export default class App extends React.Component {
   render() {
     return (
      <div style={{textAlign: 'center'}}>
-        <h1>Hello <del>World</del> Shortlist</h1>
-      </div>);
+        
+     	<Article />
+
+     </div>);
   }
 } 
