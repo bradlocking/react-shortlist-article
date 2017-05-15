@@ -1,5 +1,8 @@
-/*
+/* 
     ./client/index.js
-    which is the webpack entry file
 */
-console.log('Well Hello there Shortlist')
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './Components/App.jsx';
+
+ReactDOM.render(<App />, document.getElementById('root')); 
