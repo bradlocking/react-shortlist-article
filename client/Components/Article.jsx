@@ -49,6 +49,7 @@ class Article extends Component {
 		    					sell={article.acf.sell}
 		    					category={article.acf.category}
 		    					author={article._links.author}
+		    					date={article.date}
 		    			/>
 		    			<Widgets 
 		    				widgets={article.acf.widgets}
