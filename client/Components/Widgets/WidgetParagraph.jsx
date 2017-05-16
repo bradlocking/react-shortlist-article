@@ -1,4 +1,10 @@
 import React, {Component, PropTypes} from 'react';
+import { css, select as $ } from 'glamor'
+
+let paragraph = css({
+  '& p': { margin: 0 },
+})
+
 
 class WidgetParagraph extends Component {
   render() {
@@ -9,6 +15,9 @@ class WidgetParagraph extends Component {
 
         	/* pass paragraph through dangerouslySetInnerHTML to prevent potential XSS attacks. */
         	dangerouslySetInnerHTML={{__html: this.props.paragraph}} 
+
+        	/* styling reset for paragraph */ 
+        	{...paragraph}
         />
      );
   }

@@ -19,7 +19,7 @@ class Article extends Component {
 	}
 
 	componentWillMount() {
-  	// Endpoint for shortlist studio article
+  	  // Endpoint for shortlist studio article
 	  const endpoint =  '/api/v1/posts/171/';
 
 	  // Get the content from the API.

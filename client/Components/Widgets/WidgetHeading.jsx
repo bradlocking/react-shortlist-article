@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import { css } from 'glamor';
 
 class WidgetHeading extends Component {
   render() {
