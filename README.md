@@ -14,13 +14,12 @@ A Single page article consuming data from the Shortlist Studio website.
 
 ## Installation
 
-Project is using Yarn installed through homebrew as package manager. `cd` to the repository root and run te following tasks:
+Project is using Yarn installed through homebrew as package manager. `cd` to the repository root and run the following tasks:
 
 ``` 
 $ brew Update 
 $ yarn
 $ yarn start
-
 ```
 
 ` $ yarn start ` will fire up the webpack server.
