@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { css, select as $ } from 'glamor'
+import { css, select as $ } from 'glamor';
+import dateFormat from 'dateformat';
 
+// Import required components
 import HeroImage from './HeroImage.jsx';
 import Author from './Author.jsx';
 
 
+// Defined styles for heading component
 let hero = css({
   position: 'relative',
-  ':before': { content: 'ssdpgph' }
+  background: '#252525'
 })
 
 let container = css({ 
@@ -21,16 +24,8 @@ let container = css({
 let textContent = css({ 
   zIndex: 1,
   position: 'relative',
-  padding: '40px 0',
+  padding: '60px 0',
   '& > *': { color: '#ffffff' }
-})
-
-let paragraph = css({
-  
-})
-
-let categoryName = css({
-
 })
 
 
@@ -47,6 +42,7 @@ class Heading extends Component {
             <span>{heading.category.name}</span>
             <h1>{ heading.title }</h1>
             <Author author={heading.author} />
+            <span className="articleDate">{ dateFormat(this.props.date, "fullDate") }</span>
             <p>{ heading.sell }</p>
           </div>
     			<HeroImage imageData={heading.heroImage[0]} />

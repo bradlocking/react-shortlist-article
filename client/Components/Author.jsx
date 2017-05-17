@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Request from 'axios';
+import { css } from 'glamor';
 
-// import Loading from './Loading.jsx';
+// Styling of the author name and job description
+let authorStyle = css({
+	fontSize: 14,
+	marginBottom: 11,
+	display: 'inline-block',
+	background: '#5b5b96',
+	padding: '8px 14px',
+})
+
+let jobDescription = css({
+	color: '#000000',
+	fontWeight: '400',
+	paddingLeft: '7px'
+})
+
 
 class Author extends Component {
-
 	constructor(props) {
 		super(props);
 
@@ -42,18 +56,27 @@ class Author extends Component {
 		      });
 		    }
 
+		    // FUTURE FEATURE: hook up to sentry and log error if API fails.
   		});
 	}
 
 	render() {
-		// 
 		const { author } = this.state;
-		const authorName = this.state.authorFailed ? 'Unable to load author' : author.name;
 
 		return (
 		    <div className="author">
-		    		<div className="author__details">
-		    				{ authorName } <span>{ author.description }</span>
+		    		<div className="author__details" {...authorStyle}>
+		    				{
+		    				// If the Author cannot be fetched, just display 'Shortlist media'
+		    				// Doing so will not alert the user that something isn't working,
+		    				// TODO: hook app to Sentry so that error log can be stored, notifying us 
+		    				// Whenever a user cannot access the Author API. 
+		    				this.state.authorFailed ? ('Shortlist Media') : (
+		    					<div>
+		    						{ author.name } <span {...jobDescription}>{ author.description }</span>
+		    					</div>
+		    				)
+		    				}
 		    		</div>
 		    </div>
 		 );
@@ -62,7 +85,7 @@ class Author extends Component {
 
 
 Author.propTypes = {
-		author: PropTypes.array.isRequired
+	author: PropTypes.array.isRequired
 };
 
 export default Author;

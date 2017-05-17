@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { css, select as $ } from 'glamor';
 
 import Heading from './Widgets/WidgetHeading.jsx';
@@ -6,9 +7,9 @@ import Image from './Widgets/WidgetImage.jsx';
 import Paragraph from './Widgets/WidgetParagraph.jsx';
 
 const componentRegistry = {
-    "heading": Heading,
-    "image": Image,
-    "paragraph": Paragraph,
+  "heading": Heading,
+  "image": Image,
+  "paragraph": Paragraph,
 }
 
 let widgetsContainer = css({ 
@@ -36,12 +37,16 @@ class Widgets extends Component {
                     key={key} 
                     thisKey={key} 
                     {...widgets[key]}  
-                />;
+                 />;
      		})
      	}
 
      </div>);
   }
 } 
+
+Widgets.propTypes = {
+  widgets: React.PropTypes.array.isRequired
+}  
 
 export default Widgets;

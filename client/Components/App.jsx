@@ -1,14 +1,9 @@
-/*
-    ./client/components/App.js
-*/
 import React from 'react';
 import { css } from 'glamor';
 import 'glamor/reset';
 
-
 // Import any required components
 import Article from './Article.jsx';
-
 
 css.global('html, body', { 
 		padding: 0, 
@@ -27,7 +22,6 @@ css.global('html, body', {
 )
 
 css.global('figure', { margin: 0 })
-
 
 export default class App extends React.Component {
   render() {
