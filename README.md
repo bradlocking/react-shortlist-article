@@ -17,7 +17,7 @@ A Single page article consuming data from the Shortlist Studio website.
 Project is using Yarn installed through homebrew as package manager. `cd` to the repository root and run the following tasks:
 
 ``` 
-$ brew Update 
+$ brew update 
 $ yarn
 $ yarn start
 ```
